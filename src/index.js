@@ -3,9 +3,6 @@ import CSM from "three-csm";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import loadGlb from "../src/asset/model/happyNewYaer.glb?url";
-import loadTexture from "../src/asset/img/flow_2022-111-30_171147630.png?url";
-import backMusic from "../src/asset/audio/bgSound.mp3?url";
 
 let model;
 let mixer;
@@ -17,6 +14,10 @@ let cloneChildren = 10;
 const musicStart = document.getElementById("musicBtn");
 const musicStop = document.getElementById("musicStopBtn");
 const imgLink = document.getElementById("imgLink");
+
+import loadGlb from "../src/asset/model/happyNewYaer.glb?url";
+import loadTexture from "../src/asset/img/flow_2022-111-30_171147630.png?url";
+import backMusic from "../src/asset/audio/bgSound.mp3?url";
 
 export default function example() {
     const canvas = document.querySelector("#three-canvas");
