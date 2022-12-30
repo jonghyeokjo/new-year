@@ -7,6 +7,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
+    width: 100%;
 }
 .main button {
     position: absolute;
@@ -50,8 +51,6 @@ body {
     font-size: 14px;
     color: black;
     font-family: "NanumSquare", sans-serif;
-}
-.lineHeight {
     line-height: 10%;
 }
 .PtagMarin {
@@ -59,9 +58,8 @@ body {
 }
 .mainText {
     margin-top: 1%;
-    font-size: 18px;
+    font-size: 20px;
     color: black;
-    font-weight: bold;
 }
 .textDots {
     text-emphasis-style: dot;
@@ -92,18 +90,18 @@ body {
     font-size: 0.5rem;
     font-weight: 300;
 }
-@media screen and (max-width: 420px) {
+@media screen and (orientation: portrait) and (max-width: 420px) {
     .main button {
         width: 45px;
         height: 45px;
         top: 5%;
     }
-    .lineHeight {
+    .subText {
         font-size: 13px;
     }
 }
 
-@media screen and (max-height: 400px) and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-height: 400px) {
     .content {
         left: 0%;
         bottom: 0%;
@@ -113,12 +111,12 @@ body {
     }
     .subText,
     .lineHeight {
-        -webkit-text-size-adjust: none;
         font-size: 8px;
+        /* -webkit-text-size-adjust: none; */
     }
     .mainText {
         font-size: 10px;
-        -webkit-text-size-adjust: none;
+        /* -webkit-text-size-adjust: none; */
     }
     .information {
         font-size: 8px;
@@ -133,20 +131,19 @@ body {
     }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 300px) {
     .content {
-        left: 0%;
-        bottom: 0%;
+        left: 3%;
+        bottom: -5%;
     }
     .newYear {
         font-size: 32px;
     }
-    .subText,
-    .lineHeight {
+    .subText {
         font-size: 11px;
     }
     .mainText {
-        font-size: 16px;
+        font-size: 18px;
     }
     .information {
         font-size: 11px;

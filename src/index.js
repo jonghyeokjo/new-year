@@ -13,7 +13,7 @@ let newPlanes;
 let cloneChildren = 10;
 const musicStart = document.getElementById("musicBtn");
 const musicStop = document.getElementById("musicStopBtn");
-const imgLink = document.getElementById("imgLink");
+// const imgLink = document.getElementById("imgLink");
 
 import loadGlb from "../src/asset/model/happyNewYaer.glb?url";
 import loadTexture from "../src/asset/img/flow_2022-111-30_171147630.png?url";
@@ -179,9 +179,9 @@ export default function example() {
     window.addEventListener("resize", onWindowResize);
     musicStart.addEventListener("click", onStartMusic);
     musicStop.addEventListener("click", onStopMusic);
-    imgLink.addEventListener("click", () => {
-        window.open("http://pg-ander.com/", "_blank");
-    });
+    // imgLink.addEventListener("click", () => {
+    //     window.open("http://pg-ander.com/", "_blank");
+    // });
     /**이벤트 함수*/
     function onStartMusic() {
         normalSound.play();
@@ -203,7 +203,7 @@ export default function example() {
                 0 + rand() * 15,
                 rand() * 10 - 1
             );
-            console.log(plane.position);
+            // console.log(plane.position);
             plane.visible = true;
             scene.add(plane);
             planes.push(plane);
