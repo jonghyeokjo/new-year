@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    background-color: #fbd64b;
+    font-family: "NanumSquareAb", sans-serif;
+}
+#three-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.main button {
+    position: absolute;
+    display: flex;
+    right: 5%;
+    top: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    border-radius: 100%;
+    border: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    cursor: pointer;
+}
+.music {
+    visibility: visible;
+}
+.musicStop {
+    visibility: hidden;
+}
+.content {
+    text-align: center;
+    position: absolute;
+    bottom: 2%;
+    width: 100%;
+    color: #606060;
+    z-index: 1;
+}
+.newYear {
+    color: #c94a45;
+    font-weight: bolder;
+    font-size: 36px;
+}
+.subText {
+    font-weight: 600;
+    font-size: 14px;
+    color: black;
+    font-family: "NanumSquare", sans-serif;
+}
+.lineHeight {
+    line-height: 10%;
+}
+.PtagMarin {
+    margin: 0 0 0 0;
+}
+.mainText {
+    margin-top: 1%;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+.textDots {
+    text-emphasis-style: dot;
+    text-emphasis-position: over;
+    text-emphasis-color: #c94a45;
+    -webkit-text-emphasis-style: dot;
+    -webkit-text-emphasis-position: over;
+    -webkit-text-emphasis-color: #c94a45;
+}
+.information {
+    font-size: 14px;
+    margin: 0.5% 0 1% 0;
+}
+.buttonImage {
+    background-color: #c94a45;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 20px;
+    color: white;
+}
+.lastContent {
+    font-size: 0.5rem;
+    font-weight: 300;
+}
+@media screen and (max-width: 420px) {
+    .main button {
+        width: 45px;
+        height: 45px;
+        top: 5%;
+    }
+    .lineHeight {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-height: 400px) and (orientation: landscape) {
+    .content {
+        left: 0%;
+        bottom: 0%;
+    }
+    .newYear {
+        font-size: 14px;
+    }
+    .subText,
+    .lineHeight {
+        -webkit-text-size-adjust: none;
+        font-size: 8px;
+    }
+    .mainText {
+        font-size: 10px;
+        -webkit-text-size-adjust: none;
+    }
+    .information {
+        font-size: 8px;
+    }
+    .buttonImage {
+        width: 75px;
+        height: 20px;
+        font-size: 10px;
+    }
+    .lastContent {
+        font-size: 6px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .content {
+        left: 0%;
+        bottom: 0%;
+    }
+    .newYear {
+        font-size: 32px;
+    }
+    .subText,
+    .lineHeight {
+        font-size: 11px;
+    }
+    .mainText {
+        font-size: 16px;
+    }
+    .information {
+        font-size: 11px;
+    }
+    .lastContent {
+        font-size: 0.1rem;
+    }
+}
