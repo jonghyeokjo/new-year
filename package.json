@@ -17,6 +17,7 @@
   "description": "",
   "dependencies": {
     "dat.gui": "^0.7.9",
+    "terser": "^5.16.1",
     "three": "^0.148.0",
     "three-csm": "^3.1.1"
   }

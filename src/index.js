@@ -3,7 +3,9 @@ import CSM from "three-csm";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import dat from "dat.gui";
+import loadGlb from "../src/asset/model/happyNewYaer.glb?url";
+import loadTexture from "../src/asset/img/flow_2022-111-30_171147630.png?url";
+import backMusic from "../src/asset/audio/bgSound.mp3?url";
 
 let model;
 let mixer;
@@ -46,6 +48,15 @@ export default function example() {
     /**orbitcontrols */
     scene.add(camera);
 
+    // const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
+    // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    // const cube = new THREE.Mesh(boxGeometry, material);
+    // cube.position.set(0, 0, 200);
+
+    // scene.add(cube);
+    // const gui = new dat.GUI();
+    // gui.add;
+
     /**조명설정 */
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
     directionalLight.position.set(10.5, 6, 14.8);
@@ -81,7 +92,7 @@ export default function example() {
     spotLight3.position.set(28, 10.5, 6);
     scene.add(spotLight3);
 
-    new GLTFLoader().load("../src/asset/model/happyNewYaer.glb", (gltf) => {
+    new GLTFLoader().load(loadGlb, (gltf) => {
         gltf.scene.traverse((obj3d) => {
             if (obj3d.isMesh) {
                 obj3d.castShadow = true;
@@ -110,7 +121,7 @@ export default function example() {
 
     const textureLoader = new THREE.TextureLoader();
     const textureImage = textureLoader.load(
-        "../src/asset/img/flow_2022-111-30_171147630.png",
+        loadTexture,
         () => {
             console.log("로드완료");
         },
@@ -139,7 +150,8 @@ export default function example() {
     controls.minPolarAngle = Math.PI / 2 - 0.5;
     controls.maxPolarAngle = Math.PI / 2 - 0.5;
     const normalSound = new Audio();
-    normalSound.src = "../src/asset/audio/bgSound.mp3";
+    backMusic;
+    normalSound.src = backMusic;
     normalSound.muted = true;
 
     setInterval(() => {
@@ -186,7 +198,7 @@ export default function example() {
             plane.rotation.dz = rand() * 0.1;
 
             plane.position.set(
-                rand() * 10 - 1,
+                rand() * 10 - 5,
                 0 + rand() * 15,
                 rand() * 10 - 1
             );
