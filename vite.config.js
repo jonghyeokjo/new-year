@@ -9,10 +9,10 @@ export default defineConfig(({ command, mode }) => {
             //root: './test/signin/signin.html',
             server: {
                 host: true,
-                port: 8081,
+                port: 28107,
                 strictPort: true,
                 hmr: {
-                    clientPort: 8081,
+                    clientPort: 28107,
                 },
             },
             define: {
