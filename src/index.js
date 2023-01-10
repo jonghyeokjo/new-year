@@ -3,6 +3,9 @@ import CSM from "three-csm";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { Reflector } from "three/examples/jsm/objects/Reflector";
+import { GroundSceneReflector } from "three-reflector2";
+import Stats from "../node_modules/stats-js/src/Stats.js";
 
 let model;
 let mixer;
@@ -40,6 +43,8 @@ export default function example() {
         1000
     );
 
+    const stats = new Stats();
+    document.body.append(stats.domElement);
     camera.position.set(0.3, 1.77, 3);
     /**카메라가 해당 위치를 바라봄 */
     // camera.zoom = 0.5;
@@ -119,6 +124,17 @@ export default function example() {
         scene.add(parent);
     });
     camera.lookAt(0, 0, 0);
+
+    const mirrorBack1 = new Reflector(new THREE.PlaneGeometry(2, 2), {
+        color: new THREE.Color(0x7f7f7f),
+        clipBias: 1,
+        textureWidth: window.innerWidth * 0.7,
+        textureHeight: window.innerHeight * 0.7,
+        recursion: 4,
+    });
+    mirrorBack1.position.y = 1;
+    mirrorBack1.position.z = -2;
+    scene.add(mirrorBack1);
 
     const textureLoader = new THREE.TextureLoader();
     const textureImage = textureLoader.load(
@@ -231,7 +247,7 @@ export default function example() {
     function animate() {
         renderer.render(scene, camera);
         requestAnimationFrame(animate);
-
+        stats.update();
         const newTime = Date.now();
         const deltaTime = newTime - oldTime;
         oldTime = newTime;
